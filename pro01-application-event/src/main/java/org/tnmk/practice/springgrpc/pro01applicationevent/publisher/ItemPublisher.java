@@ -7,8 +7,13 @@ import org.tnmk.practice.springgrpc.pro01applicationevent.event.Item;
 
 @Component
 public class ItemPublisher {
+
+    private final ApplicationEventPublisher applicationEventPublisher;
+
     @Autowired
-    private ApplicationEventPublisher applicationEventPublisher;
+    public ItemPublisher(ApplicationEventPublisher applicationEventPublisher) {
+        this.applicationEventPublisher = applicationEventPublisher;
+    }
 
     public void publishItem(Item item) {
         System.out.println("Publishing custom event. ");

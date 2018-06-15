@@ -1,8 +1,12 @@
-package org.tnmk.practice.springgrpc.pro01applicationevent.service;
+package org.tnmk.practice.springgrpc.pro01applicationevent.event;
 
 public class Item {
     private String id;
     private String name;
+
+    public String toString(){
+        return "{id: "+id+", name: "+name+"}";
+    }
 
     public String getId() {
         return id;

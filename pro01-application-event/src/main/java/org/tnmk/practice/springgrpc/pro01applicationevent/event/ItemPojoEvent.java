@@ -1,6 +1,6 @@
 package org.tnmk.practice.springgrpc.pro01applicationevent.event;
 
-public class Item {
+public class ItemPojoEvent implements ItemEvent {
     private String id;
     private String name;
 
@@ -8,18 +8,22 @@ public class Item {
         return "{id: "+id+", name: "+name+"}";
     }
 
+    @Override
     public String getId() {
         return id;
     }
 
+    @Override
     public void setId(String id) {
         this.id = id;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }

@@ -5,7 +5,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.tnmk.practice.springgrpc.pro01applicationevent.event.Item;
+import org.tnmk.practice.springgrpc.pro01applicationevent.event.ItemPojoEvent;
+import org.tnmk.practice.springgrpc.pro01applicationevent.event.ItemEvent;
 import org.tnmk.practice.springgrpc.pro01applicationevent.publisher.ItemPublisher;
 
 @RunWith(SpringRunner.class)
@@ -18,7 +19,7 @@ public class ItemPublisherTest {
 
     @Test
     public void testPublish(){
-        Item item = new Item();
+        ItemEvent item = new ItemPojoEvent();
         item.setId("1");
         item.setName("my name");
         itemPublisher.publishItem(item);
